@@ -1,6 +1,7 @@
 import turtle as t
 import time
 import random
+from pathlib import Path
 def run():
     t.penup()
     t.speed(0)
@@ -24,11 +25,13 @@ def run():
 
     food = t.Turtle()
     food.speed(0)
-    food.shape("square")
-    food.shapesize(0.5, 0.5)
+    t.register_shape(str(Path().absolute())+"\\apple.gif")
+    food.shape(str(Path().absolute())+"\\apple.gif")
     food.penup()
     food.color("#ff073a")
     food.goto(0, -100)
+
+
 
     segments = []
 
@@ -69,19 +72,19 @@ def run():
         if head.xcor() > 390 or head.xcor() < -390 or head.ycor() > 390 or head.ycor() < -390:
             break
 
-        if head.distance(food) < 20:
-            x = random.randint(-390, 390)
-            y = random.randint(-390, 390)
+        if head.distance(food) < 35:
+            x = random.randint(-380, 380)
+            y = random.randint(-380, 380)
             food.goto(x, y)
 
             for i in range(3):
                 newSegment = t.Turtle()
+                newSegment.penup()
                 newSegment.speed(0)
                 newSegment.goto(1000, 1000)
                 newSegment.shape("square")
                 newSegment.color("#39ff14")
                 newSegment.shapesize(1, 1)
-                newSegment.penup()
                 segments.append(newSegment)
 
             delay -= 0.001

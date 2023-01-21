@@ -2,6 +2,7 @@
 import turtle as t
 import random
 import time
+from pathlib import Path
 def run():
     score = 0
     # window
@@ -19,9 +20,12 @@ def run():
 
     # player
     player = t.Turtle()
-    player.shape("circle")
-    player.color("yellow")
-    player.shapesize(2, 2)
+    t.register_shape(str(Path().absolute())+"\\pacmanUp.gif")
+    t.register_shape(str(Path().absolute())+"\\pacmanDown.gif")
+    t.register_shape(str(Path().absolute())+"\\pacmanRight.gif")
+    t.register_shape(str(Path().absolute())+"\\pacmanLeft.gif")
+    t.register_shape(str(Path().absolute())+"\\pacman.gif")
+    player.shape(str(Path().absolute())+"\\pacman.gif")
     player.penup()
     player.speed(0)
 
@@ -41,9 +45,8 @@ def run():
     superFood = t.Turtle()
     superFood.speed(0)
     superFood.penup()
-    superFood.color("#ffc42e")
-    superFood.shape("square")
-    superFood.shapesize(0.5, 0.5)
+    t.register_shape(str(Path().absolute())+"\\cherry.gif")
+    superFood.shape(str(Path().absolute())+"\\cherry.gif")
     x = random.randint(-370, 370)
     y = random.randint(-370, 370)
     superFood.setpos(x, y)
@@ -52,23 +55,10 @@ def run():
 
     # enemy1
     enemy1 = t.Turtle()
-    enemy1.speed(0)
+    enemy1.speed(5)
     enemy1.penup()
-    colorPick = random.randint(1, 5)
-
-    if colorPick == 1:
-        enemy1.color("#2b80ff")
-    elif colorPick == 2:
-        enemy1.color("#ff1493")
-    elif colorPick == 3:
-        enemy1.color("#ff9e3d")
-    elif colorPick == 4:
-        enemy1.color("#ff0703")
-    elif colorPick == 5:
-        enemy1.color("#18ff1d")
-
-    enemy1.shape("square")
-    enemy1.shapesize(2, 2)
+    t.register_shape(str(Path().absolute())+"\\blueGhost.gif")
+    enemy1.shape(str(Path().absolute())+"\\blueGhost.gif")
     x = random.randint(-380, 380)
     enemy1.setpos(x, 380)
 
@@ -76,23 +66,10 @@ def run():
 
     # enemy2
     enemy2 = t.Turtle()
-    enemy2.speed(0)
+    enemy2.speed(5)
     enemy2.penup()
-    colorPick = random.randint(1, 5)
-
-    if colorPick == 1:
-        enemy2.color("#2b80ff")
-    elif colorPick == 2:
-        enemy2.color("#ff1493")
-    elif colorPick == 3:
-        enemy2.color("#ff9e3d")
-    elif colorPick == 4:
-        enemy2.color("#ff0703")
-    elif colorPick == 5:
-        enemy2.color("#18ff1d")
-
-    enemy2.shape("square")
-    enemy2.shapesize(2, 2)
+    t.register_shape(str(Path().absolute())+"\\redGhost.gif")
+    enemy2.shape(str(Path().absolute())+"\\redGhost.gif")
     x = random.randint(-380, 380)
     enemy2.setpos(x, 380)
 
@@ -105,23 +82,34 @@ def run():
 
     scoreT.write("Score: "+str(score), align=("center"), font=("Courier", 20))
     while True:
+        
         # def movements
+        
         def up():
-            y = player.ycor()
-            y += 15
-            player.sety(y)
+            player.heading = "Up"
+            player.shape(str(Path().absolute())+"\\pacman.gif")
+        
         def down():
-            y = player.ycor()
-            y -= 15
-            player.sety(y)
+            player.heading = "Down"
+            player.shape(str(Path().absolute())+"\\pacman.gif")
+
         def left():
-            x = player.xcor()
-            x -= 15
-            player.setx(x)
+            player.heading = "Left"
+            player.shape(str(Path().absolute())+"\\pacman.gif")
+
         def right():
-            x = player.xcor()
-            x += 15
-            player.setx(x)
+            player.heading = "Right"
+            player.shape(str(Path().absolute())+"\\pacman.gif")
+        
+        def move():
+            if player.heading == "Up":
+                player.sety(player.ycor()+2.5)
+            if player.heading == "Down":
+                player.sety(player.ycor()-2.5)
+            if player.heading == "Left":
+                player.setx(player.xcor()-2.5)
+            if player.heading == "Right":
+                player.setx(player.xcor()+2.5)
 
         # input movements
         window.listen()
@@ -144,7 +132,7 @@ def run():
         
         # collision with food
         for food in foods:
-            if player.distance(food) < 30:
+            if player.distance(food) < 35:
                 x = random.randint(-380, 380)
                 y = random.randint(-380, 380)
                 score += 50
@@ -153,23 +141,25 @@ def run():
                 scoreT.write("Score: "+str(score), align=("center"), font=("Courier", 20))
                 food.setpos(x, y)
         
-        if player.distance(superFood) < 30:
+        if player.distance(superFood) < 50:
             score += 100
             eaten += 1
             scoreT.clear()
             scoreT.write("Score: "+str(score), align=("center"), font=("Courier", 20))
+            x = random.randint(-380, 380)
+            y = random.randint(-380, 380)
             superFood.setpos(x, y)
 
 
         # enemy movement
         enemy1.setheading(enemy1.towards(player))
 
-        enemy1.forward(0.5)
+        enemy1.forward(0.2+(score/1000))
         enemy2.setheading(enemy2.towards(player))
-        enemy2.forward(0.8)
+        enemy2.forward(0.3+(score/1000))
 
         # collision with enemy
-        if player.distance(enemy1) < 25 or player.distance(enemy2) < 25:
+        if player.distance(enemy1) < 50 or player.distance(enemy2) < 50:
             t.hideturtle()
             t.color("white")
             t.goto(0, 0)
@@ -179,6 +169,7 @@ def run():
             t.write("Score: "+str(score), align=("center"), font=("Courier", 20))
             break
 
+        move()
         window.title(score)
         window.update()
     window.update()

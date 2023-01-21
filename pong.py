@@ -134,15 +134,17 @@ def run():
         
         if abs(ball.ycor()) > 350 or abs(ball.ycor()) < -350:
             ball.setheading((360 - ball.heading()) % 360)
-            
+            #playsound(str(Path().absolute())+"\\boing.mp3")
         
         if ball.xcor() <= -430:
             if paddle1.ycor() - 70 <= ball.ycor() <= paddle1.ycor() + 70:
                 ball.setheading((180 - ball.heading()) % 360)
+                #playsound(str(Path().absolute())+"\\boing.mp3")
         
         if ball.xcor() >= 430:
             if paddle2.ycor() - 70 <= ball.ycor() <= paddle2.ycor() + 70:
                 ball.setheading((180 - ball.heading()) % 360)
+                #playsound(str(Path().absolute())+"\\boing.mp3")
         
         time.sleep(0.009)
         
