@@ -24,8 +24,7 @@ def run():
     t.register_shape(str(Path().absolute())+"\\pacmanDown.gif")
     t.register_shape(str(Path().absolute())+"\\pacmanRight.gif")
     t.register_shape(str(Path().absolute())+"\\pacmanLeft.gif")
-    t.register_shape(str(Path().absolute())+"\\pacman.gif")
-    player.shape(str(Path().absolute())+"\\pacman.gif")
+    player.shape(str(Path().absolute())+"\\pacmanRight.gif")
     player.penup()
     player.speed(0)
 
@@ -87,19 +86,19 @@ def run():
         
         def up():
             player.heading = "Up"
-            player.shape(str(Path().absolute())+"\\pacman.gif")
+            player.shape(str(Path().absolute())+"\\pacmanUp.gif")
         
         def down():
             player.heading = "Down"
-            player.shape(str(Path().absolute())+"\\pacman.gif")
+            player.shape(str(Path().absolute())+"\\pacmanDown.gif")
 
         def left():
             player.heading = "Left"
-            player.shape(str(Path().absolute())+"\\pacman.gif")
+            player.shape(str(Path().absolute())+"\\pacmanLeft.gif")
 
         def right():
             player.heading = "Right"
-            player.shape(str(Path().absolute())+"\\pacman.gif")
+            player.shape(str(Path().absolute())+"\\pacmanRight.gif")
         
         def move():
             if player.heading == "Up":
