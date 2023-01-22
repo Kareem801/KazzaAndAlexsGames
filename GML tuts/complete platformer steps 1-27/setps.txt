@@ -1,0 +1,51 @@
+Part 1 - Basics 22 kB
+ Jan 22, 2018
+Part 2 - Animated Player 35 kB
+ Jan 22, 2018
+Part 3 - Shooting & Recoil 41 kB
+ Jan 22, 2018
+Part 4 - Enemies & Hitflash 63 kB
+ Jan 22, 2018
+Part 5 - Gamepads (optional) 63 kB
+ Jan 22, 2018
+Part 6 - Cameras & Tiles 82 kB
+ Jan 22, 2018
+Part 7 - Screen Transitions 96 kB
+ Jan 22, 2018
+Part 8 - Screenshake 97 kB
+ Jan 22, 2018
+Part 9 - Parallax Backgrounds 134 kB
+ Jan 22, 2018
+Part 10 - Menus 138 kB
+ Jan 22, 2018
+Part 11 - Saving & Loading 144 kB
+ Jan 22, 2018
+Part 12 - Parent & Child objects 145 kB
+ Jan 22, 2018
+Part 13 - Sound Effects 376 kB
+ Jan 27, 2018
+Part 14 - Dying 382 kB
+ Feb 09, 2018
+Part 15 - Signposts 396 kB
+ Mar 10, 2018
+Part 16 - Title screen + Mouse Menu 412 kB
+ Mar 30, 2018
+Part 17 & 18 - Jump buffers & Enemy cliff behaviour 403 kB
+ Apr 25, 2018
+Part 19 - Crates & Pickups 422 kB
+ May 04, 2018
+Part 20 - Sparks & Dust 448 kB
+ Jun 14, 2018
+Part 21 - Enemies shoot back 454 kB
+ Jul 23, 2018
+Part 22 - Fullscreen & GUI Fixing 460 kB
+ Aug 10, 2018
+Part 23 - Score tracking 461 kB
+ Aug 10, 2018
+Part 24 - Global Flags 462 kB
+ Aug 31, 2018
+Part 25 - Endings 466 kB
+ Aug 31, 2018
+Part 26 - Gun kickback 473 kB
+ Sep 08, 2018
+Part 27 - Final Polish
