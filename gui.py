@@ -1,8 +1,8 @@
 
 from tkinter import *
-import pacman
-import snake
-import pong
+import pacman.pacman as pacman
+import snake.snake as snake
+import pong.pong as pong
 import pyautogui
 mainWindow = Tk()
 width, height = pyautogui.size()
