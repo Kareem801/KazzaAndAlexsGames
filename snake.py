@@ -25,8 +25,8 @@ def run():
 
     food = t.Turtle()
     food.speed(0)
-    t.register_shape(str(Path().absolute())+"\\apple.gif")
-    food.shape(str(Path().absolute())+"\\apple.gif")
+    t.register_shape(str(Path().absolute())+"\\snakeSprites\\apple.gif")
+    food.shape(str(Path().absolute())+"\\snakeSprites\\apple.gif")
     food.penup()
     food.color("#ff073a")
     food.goto(0, -100)
