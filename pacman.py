@@ -20,11 +20,11 @@ def run():
 
     # player
     player = t.Turtle()
-    t.register_shape(str(Path().absolute())+"\\pacmanUp.gif")
-    t.register_shape(str(Path().absolute())+"\\pacmanDown.gif")
-    t.register_shape(str(Path().absolute())+"\\pacmanRight.gif")
-    t.register_shape(str(Path().absolute())+"\\pacmanLeft.gif")
-    player.shape(str(Path().absolute())+"\\pacmanRight.gif")
+    t.register_shape(str(Path().absolute())+"\\pacmanSprites\\pacmanUp.gif")
+    t.register_shape(str(Path().absolute())+"\\pacmanSprites\\pacmanDown.gif")
+    t.register_shape(str(Path().absolute())+"\\pacmanSprites\\pacmanRight.gif")
+    t.register_shape(str(Path().absolute())+"\\pacmanSprites\\pacmanLeft.gif")
+    player.shape(str(Path().absolute())+"\\pacmanSprites\\pacmanRight.gif")
     player.penup()
     player.speed(0)
 
@@ -44,8 +44,8 @@ def run():
     superFood = t.Turtle()
     superFood.speed(0)
     superFood.penup()
-    t.register_shape(str(Path().absolute())+"\\cherry.gif")
-    superFood.shape(str(Path().absolute())+"\\cherry.gif")
+    t.register_shape(str(Path().absolute())+"\\pacmanSprites\\cherry.gif")
+    superFood.shape(str(Path().absolute())+"\\pacmanSprites\\cherry.gif")
     x = random.randint(-370, 370)
     y = random.randint(-370, 370)
     superFood.setpos(x, y)
@@ -56,8 +56,8 @@ def run():
     enemy1 = t.Turtle()
     enemy1.speed(5)
     enemy1.penup()
-    t.register_shape(str(Path().absolute())+"\\blueGhost.gif")
-    enemy1.shape(str(Path().absolute())+"\\blueGhost.gif")
+    t.register_shape(str(Path().absolute())+"\\pacmanSprites\\blueGhost.gif")
+    enemy1.shape(str(Path().absolute())+"\\pacmanSprites\\blueGhost.gif")
     x = random.randint(-380, 380)
     enemy1.setpos(x, 380)
 
@@ -67,8 +67,8 @@ def run():
     enemy2 = t.Turtle()
     enemy2.speed(5)
     enemy2.penup()
-    t.register_shape(str(Path().absolute())+"\\redGhost.gif")
-    enemy2.shape(str(Path().absolute())+"\\redGhost.gif")
+    t.register_shape(str(Path().absolute())+"\\pacmanSprites\\redGhost.gif")
+    enemy2.shape(str(Path().absolute())+"\\pacmanSprites\\redGhost.gif")
     x = random.randint(-380, 380)
     enemy2.setpos(x, 380)
 
@@ -86,19 +86,19 @@ def run():
         
         def up():
             player.heading = "Up"
-            player.shape(str(Path().absolute())+"\\pacmanUp.gif")
+            player.shape(str(Path().absolute())+"\\pacmanSprites\\pacmanUp.gif")
         
         def down():
             player.heading = "Down"
-            player.shape(str(Path().absolute())+"\\pacmanDown.gif")
+            player.shape(str(Path().absolute())+"\\pacmanSprites\\pacmanDown.gif")
 
         def left():
             player.heading = "Left"
-            player.shape(str(Path().absolute())+"\\pacmanLeft.gif")
+            player.shape(str(Path().absolute())+"\\pacmanSprites\\pacmanLeft.gif")
 
         def right():
             player.heading = "Right"
-            player.shape(str(Path().absolute())+"\\pacmanRight.gif")
+            player.shape(str(Path().absolute())+"\\pacmanSprites\\pacmanRight.gif")
         
         def move():
             if player.heading == "Up":
