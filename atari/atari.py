@@ -1,7 +1,7 @@
 import turtle as t
 import random
 import time
-import mouse
+from mouse import *
 
 def run():
     score = 0
@@ -174,7 +174,7 @@ def run():
                 brick.goto(2000, 2000)
                 score += 50
 
-        x, y = mouse.get_position()
+        x, y = get_position()
         x = x-540
         if x < 50:
             x = 50
