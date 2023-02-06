@@ -1,4 +1,3 @@
-from pathlib import Path
 from csv import reader
 from os import walk
 import pygame

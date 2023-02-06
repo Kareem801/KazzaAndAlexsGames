@@ -1,5 +1,5 @@
 import pygame
-from pathlib import Path
+import os
 
 class Weapon(pygame.sprite.Sprite):
     def __init__(self, player, groups):
@@ -7,7 +7,7 @@ class Weapon(pygame.sprite.Sprite):
         direction = player.status.split("_")[0]
         
         # graphic
-        full_path = str(Path().absolute())+f"\\graphics\\weapons\\{player.weapon}\\{direction}.png"
+        full_path = os.getcwd()+f"\\zelda\\graphics\\weapons\\{player.weapon}\\{direction}.png"
         self.image = pygame.image.load(full_path).convert_alpha()
         
         #placement

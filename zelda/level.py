@@ -3,11 +3,11 @@ from settings import *
 from tile import Tile
 from player import Player
 from debug import debug
-from pathlib import Path
 from support import *
 from random import choice
 from weapon import Weapon
 from ui import UI
+import os
 
 class Level:
     def __init__(self):
@@ -30,13 +30,13 @@ class Level:
     
     def create_map(self):
         layouts = {
-            "boundary": import_csv_layout(str(Path().absolute())+"\\KazzaAndAlexsGames-main\\zelda\\map\\map_FloorBlocks.csv"),
-            "grass": import_csv_layout(str(Path().absolute())+"\\KazzaAndAlexsGames-main\\zelda\\map\\map_Grass.csv"),
-            "object": import_csv_layout(str(Path().absolute())+"\\KazzaAndAlexsGames-main\\zelda\\map\\map_LargeObjects.csv"),
+            "boundary": import_csv_layout(os.getcwd()+"\\zelda\\map\\map_FloorBlocks.csv"),
+            "grass": import_csv_layout(os.getcwd()+"\\zelda\\map\\map_Grass.csv"),
+            "object": import_csv_layout(os.getcwd()+"\\zelda\\map\\map_LargeObjects.csv"),
         }
         graphics = {
-            "grass": import_folder(str(Path().absolute())+"\\KazzaAndAlexsGames-main\\zelda\\graphics\\grass"),
-            "objects": import_folder(str(Path().absolute())+"\\KazzaAndAlexsGames-main\\zelda\\graphics\\objects"),
+            "grass": import_folder(os.getcwd()+"\\zelda\\graphics\\grass"),
+            "objects": import_folder(os.getcwd()+"\\zelda\\graphics\\objects"),
         }
  
         for style,layout in layouts.items():
@@ -81,7 +81,7 @@ class YSortCameraGroup(pygame.sprite.Group):
         self.half_height = self.display_surface.get_size()[1] // 2
         self.offset = pygame.math.Vector2(100, 200)
 
-        self.floor_surf = pygame.image.load(str(Path().absolute())+"\\KazzaAndAlexsGames-main\\zelda\\graphics\\tilemap\\ground.png").convert()
+        self.floor_surf = pygame.image.load(os.getcwd()+"\\zelda\\graphics\\tilemap\\ground.png").convert()
         self.floor_rect = self.floor_surf.get_rect(topleft = (0,0))
     
     def custom_draw(self, player):
