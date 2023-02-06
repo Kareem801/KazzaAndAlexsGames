@@ -30,13 +30,13 @@ class Level:
     
     def create_map(self):
         layouts = {
-            "boundary": import_csv_layout(str(Path().absolute())+"\\map\\map_FloorBlocks.csv"),
-            "grass": import_csv_layout(str(Path().absolute())+"\\map\\map_Grass.csv"),
-            "object": import_csv_layout(str(Path().absolute())+"\\map\\map_LargeObjects.csv"),
+            "boundary": import_csv_layout(str(Path().absolute())+"\\KazzaAndAlexsGames-main\\zelda\\map\\map_FloorBlocks.csv"),
+            "grass": import_csv_layout(str(Path().absolute())+"\\KazzaAndAlexsGames-main\\zelda\\map\\map_Grass.csv"),
+            "object": import_csv_layout(str(Path().absolute())+"\\KazzaAndAlexsGames-main\\zelda\\map\\map_LargeObjects.csv"),
         }
         graphics = {
-            "grass": import_folder(str(Path().absolute())+"\\graphics\\grass"),
-            "objects": import_folder(str(Path().absolute())+"\\graphics\\objects"),
+            "grass": import_folder(str(Path().absolute())+"\\KazzaAndAlexsGames-main\\zelda\\graphics\\grass"),
+            "objects": import_folder(str(Path().absolute())+"\\KazzaAndAlexsGames-main\\zelda\\graphics\\objects"),
         }
  
         for style,layout in layouts.items():
@@ -81,7 +81,7 @@ class YSortCameraGroup(pygame.sprite.Group):
         self.half_height = self.display_surface.get_size()[1] // 2
         self.offset = pygame.math.Vector2(100, 200)
 
-        self.floor_surf = pygame.image.load(str(Path().absolute())+"\\graphics\\tilemap\\ground.png").convert()
+        self.floor_surf = pygame.image.load(str(Path().absolute())+"\\KazzaAndAlexsGames-main\\zelda\\graphics\\tilemap\\ground.png").convert()
         self.floor_rect = self.floor_surf.get_rect(topleft = (0,0))
     
     def custom_draw(self, player):
