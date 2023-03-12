@@ -1,0 +1,199 @@
+/* Global styles */
+body {
+	background-color: black;
+	color: #FFFFFF;
+	font-family: Arial, sans-serif;
+}
+
+a {
+	color: #336699;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+}
+
+/* Header styles */
+header {
+	background-color: black;
+	color: white;
+	padding: 10px;
+}
+
+nav ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav ul li {
+	margin: 0 10px;
+}
+
+nav ul li:first-child {
+	margin-left: 0;
+}
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+
+nav a {
+	font-size: 18px;
+}
+
+/* Hero section styles */
+.hero {
+	background-color: #2d3337;
+	color: white;
+	padding: 50px;
+	text-align: center;
+}
+
+.hero h1 {
+	font-size: 48px;
+	margin-bottom: 20px;
+}
+
+.hero p {
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+
+.button {
+	background-color: #336699;
+	color: white;
+	display: inline-block;
+	font-size: 20px;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.button:hover {
+	background-color: #0A0E3F;
+}
+
+/* Games section styles */
+.games {
+	background-color: black;
+	color: white;
+	padding: 50px;
+}
+
+.games h2 {
+	font-size: 36px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.games ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.games li {
+	flex-basis: calc(33.33% - 20px);
+	margin-bottom: 40px;
+	position: relative;
+}
+
+.games ul li:hover {
+	transform: scale(1.05);
+}
+
+.games li img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+.games li h3 {
+	background-color: #336699;
+	color: white;
+	font-size: 24px;
+	margin: 0;
+	padding: 10px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/* Reviews section styles */
+.reviews {
+	background-color: #0A0E3F;
+	color: white;
+	padding: 50px;
+}
+
+.reviews h2 {
+	font-size: 36px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.reviews ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.reviews li {
+	flex-basis: calc(33.33% - 20px);
+	margin-bottom: 40px;
+	position: relative;
+}
+
+.reviews li img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+.reviews li h3 {
+	background-color: #336699;
+	color: white;
+	font-size: 24px;
+	margin: 0;
+	padding: 10px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/* Footer styles */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
